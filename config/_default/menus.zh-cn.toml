@@ -1,0 +1,41 @@
+[[main]]
+  name = "关于"
+  url = "/#about"
+  weight = 2
+
+[[main]]
+  name = "技能"
+  url = "/#skills"
+  weight = 3
+
+[[main]]
+  name = "经历"
+  url = "/#experience"
+  weight = 4
+
+[[main]]
+  name = "技术栈"
+  url = "/#technical"
+  weight = 4.5
+
+[[main]]
+  name = "联系"
+  url = "/#contact"
+  weight = 5
+
+[[main]]
+  name = "科研项目"
+  url = "/projects/"
+  weight = 50
+  pre = "projects"
+
+[[main]]
+  name = "论文发表"
+  url = "/publications/"
+  weight = 51
+  pre = "publications"
+
+[[main]]
+  name = "荣誉奖项"
+  url = "/awards/"
+  weight = 60

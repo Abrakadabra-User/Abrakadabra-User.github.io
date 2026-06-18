@@ -1,0 +1,180 @@
+# Hugo Site Configuration
+baseURL = "https://Abrakadabra-User.github.io/"
+languageCode = "en-us"
+title = "Fu Zhanbo"
+theme = "careercanvas"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 1
+    [languages.en.params]
+      tagline = "CS Undergraduate | Exploring Computer Vision, Large Models & Embodied AI"
+        hero_description = "I am an undergraduate student majoring in Computer Science and Technology. I have a solid programming foundation and actively engage in academic research. Recently, I published a first-author paper in the JCR Q1 journal Remote Sensing regarding visual enhancement (the SARM framework). My current research interests span Computer Vision, Multimodal Large Models, and Embodied AI, and I am eager to further explore intelligent perception in my graduate studies."
+        hero_location = "Wuhan, China"
+        resume_url = "/files/Fu_Zhanbo_CV_EN.pdf" 
+        collab_tags = [
+          "Computer Vision (CV)",
+          "Large Models & Multimodal",
+          "Embodied AI",
+          "Algorithm Implementation",
+          "Mathematical Modeling"
+      ]
+
+  [languages.zh-cn]
+    contentDir = "content/zh-cn"
+    languageName = "中文"
+    weight = 2
+    [languages.zh-cn.params]
+      tagline = "计算机科学与技术本科生 | 探索计算机视觉、大模型与具身智能"
+        hero_description = "我是一名计算机科学与技术专业的本科生。我具备扎实的数理与编程基础，并积极投入科研实践。近期，我以第一作者身份在 JCR Q1 区期刊《Remote Sensing》上发表了视觉增强相关的研究成果（SARM 框架）。目前，我的研究兴趣主要集中在计算机视觉、多模态大模型以及具身智能等交叉领域，期待在研究生阶段进行更深入的探索。"
+        hero_location = "中国, 武汉"
+        resume_url = "/files/Fu_Zhanbo_CV_CN.pdf" 
+        collab_tags = [
+          "计算机视觉 (CV)",
+          "大模型与多模态",
+          "具身智能 (Embodied AI)",
+          "算法实现",
+          "数学建模"  
+      ]
+
+[build]
+  writeStats = true
+
+[params]
+name = "Fu Zhanbo"
+firstName = "Zhanbo"
+lastName = "Fu"
+
+email = "fuzhanbo@cug.edu.cn" 
+profile_image = "/images/profile.jpg" 
+author = "Fu Zhanbo"
+
+og_image = "images/og-image.png"
+
+description = "CS Undergraduate Student exploring Computer Vision, Large Models, and Embodied AI."
+
+
+# 已经替换为你真实的 GitHub 仓库地址
+github_url = "https://github.com/Abrakadabra-User"
+github_text = "github.com/Abrakadabra-User"
+
+
+copyright = "Fu Zhanbo"
+
+# 指向你稍早前放入的个人简历文件
+resume_url_en = "/files/Fu_Zhanbo_CV_EN.pdf"
+resume_url_zh = "/files/Fu_Zhanbo_CV_CN.pdf"
+resume_label = "View CV"
+
+formspreeendpoint = ""
+pexelsapikey = ""
+
+
+
+[[params.social]]
+icon = "github"
+url = "https://github.com/Abrakadabra-User"
+
+sectionPagesMenu = 'main'
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+
+[server]
+  [[server.headers]]
+    for = "/**/*.css"
+    [server.headers.values]
+      Content-Type = "text/css"
+
+# Dynamic Color Palettes Configuration
+# Multiple color palettes that will be randomly selected on each page load
+# Each palette contains main_color, second_color, and third_color
+[params.color_palettes]
+  [[params.color_palettes.palette]]
+    name = "professional"
+    main_color = "#474A51"    # Graphite Gray – ultra professional, metallic, predominant
+    second_color = "#E52521"  # Mario Red – subtle accent, inspired by Super Mario
+    third_color = "#3CB043"   # Luigi Green – subtle accent, inspired by Luigi
+  
+  [[params.color_palettes.palette]]
+    name = "ocean"
+    main_color = "#1E40AF"    # Vibrant Blue – energetic and modern
+    second_color = "#06B6D4"  # Cyan – fresh and innovative
+    third_color = "#10B981"   # Emerald – growth and success
+  
+  # [[params.color_palettes.palette]]
+  #   name = "sunset"
+  #   main_color = "#DC2626"    # Vibrant Red – warm and energetic
+  #   second_color = "#F59E0B"  # Amber – optimistic and bright
+  #   third_color = "#EF4444"   # Red Orange – passion and creativity
+  # 
+  # [[params.color_palettes.palette]]
+  #   name = "forest"
+  #   main_color = "#059669"    # Deep Emerald – natural and stable
+  #   second_color = "#10B981"  # Green – growth and success
+  #   third_color = "#F59E0B"   # Golden Yellow – wisdom and clarity
+  # 
+  # [[params.color_palettes.palette]]
+  #   name = "fire"
+  #   main_color = "#EA580C"    # Orange – creativity and enthusiasm
+  #   second_color = "#DC2626"  # Red – passion and energy
+  #   third_color = "#F59E0B"   # Amber – warmth and optimism
+  
+  [[params.color_palettes.palette]]
+    name = "steel"
+    main_color = "#374151"    # Steel Gray – industrial and reliable
+    second_color = "#6B7280"  # Medium Gray – balanced and professional
+    third_color = "#10B981"   # Emerald – success and precision
+  
+  [[params.color_palettes.palette]]
+    name = "navy"
+    main_color = "#1E3A8A"    # Navy Blue – authoritative and trustworthy
+    second_color = "#3B82F6"  # Bright Blue – innovation and clarity
+    third_color = "#F59E0B"   # Amber – excellence and achievement
+  
+  # [[params.color_palettes.palette]]
+  #   name = "charcoal"
+  #   main_color = "#1F2937"    # Charcoal – sophisticated and modern
+  #   second_color = "#EF4444"  # Red – energy and determination
+  #   third_color = "#22C55E"   # Green – growth and stability
+  
+  [[params.color_palettes.palette]]
+    name = "slate"
+    main_color = "#475569"    # Slate Blue – professional and calm
+    second_color = "#0EA5E9"  # Sky Blue – clear thinking and progress
+    third_color = "#F97316"   # Orange – creativity and innovation
+  
+  [[params.color_palettes.palette]]
+    name = "midnight"
+    main_color = "#0F172A"    # Midnight Blue – deep and authoritative
+    second_color = "#8B5CF6"  # Purple – innovation and technology
+    third_color = "#06B6D4"   # Cyan – precision and clarity
+  
+
+
+
+
+# Pexels hero backgrounds (queries only; API key in params above)
+[params.pexels]
+  queries = [
+    "underwater ocean",        # 抓取深海与水下视觉图片
+    "deep sea exploration",    # 展现水下复杂环境
+    "robotics",                # 契合具身智能硬件端
+    "artificial intelligence", # 涵盖大模型与通用人工智能
+    "computer vision",         # 契合视觉算法与增强处理
+    "abstract technology"      # 极简的高级代码与光影背景
+  ]
+
+[security.node.permissions]
+  disable = true
