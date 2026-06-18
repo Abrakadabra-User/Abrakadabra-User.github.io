@@ -15,7 +15,8 @@
       <div class="lg:w-1/2">
         <div class="contact-card bg-bg dark:bg-bg p-8 rounded-lg shadow-lg border border-border-primary dark:border-border-primary card-hover">
           <h3 class="text-xl font-semibold mb-6 text-text-primary dark:text-text-primary">{{ i18n "sendMeAMessage" }}</h3>
-          <form id="contact-form" action="" method="POST" class="space-y-6">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+            <input type="hidden" name="access_key" value="b8bd13ff-a268-4078-99d4-a35734ae9961">
             <input type="text" name="_gotcha" style="display:none">
             <div class="flex flex-col sm:flex-row gap-4">
               <div class="flex-1">
@@ -128,26 +129,22 @@
     if (form) {
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
-        
-        // Get Formspree endpoint from secure configuration
-        const formspreeEndpoint = window.FORMSPREE_ENDPOINT;
-        
-        if (!formspreeEndpoint) {
-          showToast('⚠️ Contact form not configured. Please try again later.');
-          return;
-        }
-        
         const formData = new FormData(form);
-    
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        showToast('Sending...');
+
         try {
-          const response = await fetch(formspreeEndpoint, {
+          const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            body: formData,
             headers: {
+              'Content-Type': 'application/json',
               'Accept': 'application/json'
-            }
+            },
+            body: json
           });
-    
+
           if (response.ok) {
             showToast('✅ Thank you! I\'ll get back to you soon.');
             form.reset();
@@ -155,7 +152,6 @@
             showToast('❌ Error: Please try again.');
           }
         } catch (error) {
-          console.error(error);
           showToast('⚠️ Failed to submit.');
         }
       });
@@ -207,4 +203,3 @@
     }
   });
 </script>
-
